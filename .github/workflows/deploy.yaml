@@ -13,7 +13,7 @@ jobs:
       - run: docker build -t angrysquirrel/react-test -f Dockerfile.dev .
       - run: docker run -e CI=true angrysquirrel/react-test npm test
 
-  - name: Generate deployment package
+      - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
 
       - name: Deploy to EB
